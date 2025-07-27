@@ -1,0 +1,13 @@
+deployName: adservice-Deployment
+appReplicas: 1
+appName: adservice
+appImage: anki15201/microservices
+appVersion: adservice
+containerPort: 9555
+
+serviceName: adservice-service
+serviceType: ClusterIP
+servicePort: 9555
+containerEnvVar:
+- name: PORT
+  value: "9555"

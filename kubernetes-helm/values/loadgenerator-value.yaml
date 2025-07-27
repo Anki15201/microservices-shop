@@ -1,0 +1,13 @@
+deployName: loadgenerator-Deployment
+appReplicas: 1
+appName: loadgenerator
+appImage: anki15201/microservices
+appVersion: loadgenerator
+containerPort: 9555
+
+serviceName: loadgenerator-service
+serviceType: ClusterIP
+servicePort: 9555
+containerEnvVar:
+- name: PORT
+  value: "9555"

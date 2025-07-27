@@ -1,0 +1,13 @@
+deployName: shippingservice-Deployment
+appReplicas: 1
+appName: shippingservice
+appImage: anki15201/microservices
+appVersion: shippingservice
+containerPort: 50051
+
+serviceName: shippingservice-service
+serviceType: ClusterIP
+servicePort: 50051
+containerEnvVar:
+- name: PORT
+  value: "50051"

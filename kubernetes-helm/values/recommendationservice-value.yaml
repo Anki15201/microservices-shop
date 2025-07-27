@@ -1,0 +1,15 @@
+deployName: recommendationservice-Deployment
+appReplicas: 1
+appName: recommendationservice
+appImage: anki15201/microservices
+appVersion: recommendationservice
+containerPort: 8080
+
+serviceName: recommendationservice-service
+serviceType: ClusterIP
+servicePort: 8080
+containerEnvVar:
+- name: PORT
+  value: "8080"
+- name: PRODUCT_CATALOG_SERVICE_ADDR
+  value: "productcatalogservice:3550"

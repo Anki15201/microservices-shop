@@ -1,0 +1,13 @@
+deployName: productcatalogservice-Deployment
+appReplicas: 1
+appName: productcatalogservice
+appImage: anki15201/microservices
+appVersion: productcatalogservice
+containerPort: 3550
+
+serviceName: productcatalogservice-service
+serviceType: ClusterIP
+servicePort: 3550
+containerEnvVar:
+- name: PORT
+  value: "3550"

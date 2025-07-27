@@ -1,0 +1,13 @@
+deployName: emailservice-Deployment
+appReplicas: 1
+appName: emailservice
+appImage: anki15201/microservices
+appVersion: emailservice
+containerPort: 8080
+
+serviceName: emailservice-service
+serviceType: ClusterIP
+servicePort: 5000
+containerEnvVar:
+- name: PORT
+  value: "8080"

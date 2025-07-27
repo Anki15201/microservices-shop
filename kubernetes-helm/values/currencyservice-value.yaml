@@ -1,0 +1,13 @@
+deployName: currencyservice-Deployment
+appReplicas: 1
+appName: currencyservice
+appImage: anki15201/microservices
+appVersion: currencyservice
+containerPort: 7000
+
+serviceName: currencyservice-service
+serviceType: ClusterIP
+servicePort: 7000
+containerEnvVar:
+- name: PORT
+  value: "7000"

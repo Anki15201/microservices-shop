@@ -1,0 +1,13 @@
+deployName: paymentservice-Deployment
+appReplicas: 1
+appName: paymentservice
+appImage: anki15201/microservices
+appVersion: paymentservice
+containerPort: 50051
+
+serviceName: paymentservice-service
+serviceType: ClusterIP
+servicePort: 50051
+containerEnvVar:
+- name: PORT
+  value: "50051"
