@@ -39,10 +39,10 @@ releases:
     values:
       - values/paymentservice-value.yaml
 
-  - name: productcatelogservice
+  - name: productcatalogservice
     chart: charts/microservices
     values:
-      - values/productcatelogservice-value.yaml
+      - values/productcatalogservice-value.yaml
 
   - name: recommendationservice
     chart: charts/microservices
@@ -53,3 +53,6 @@ releases:
     chart: charts/microservices
     values:
       - values/shippingservice-value.yaml
+
+namespaces:
+  - microservices

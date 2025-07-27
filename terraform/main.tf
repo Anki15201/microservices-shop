@@ -14,6 +14,7 @@ resource "aws_instance" "k8s_control_plane" {
   count         = 1
   key_name      = aws_key_pair.deployer.key_name
   security_groups = [aws_security_group.k8s_sg.name]
+
   tags = {
     Name = "k8s-control-plane"
   }
@@ -33,6 +34,7 @@ resource "aws_instance" "k8s_worker" {
   count         = 2
   key_name      = aws_key_pair.deployer.key_name
   security_groups = [aws_security_group.k8s_sg.name]
+
   tags = {
     Name = "k8s-worker-${count.index}"
   }
@@ -43,6 +45,7 @@ resource "aws_instance" "k8s_worker" {
     delete_on_termination = true        # Delete volume when instance terminates
     encrypted             = true        # Enable encryption
   } 
+
 }
 
 resource "aws_security_group" "k8s_sg" {
