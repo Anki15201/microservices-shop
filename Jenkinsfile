@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    DOCKER_REGISTRY = 'anki15201' // Replace with your Docker Hub username
+    DOCKER_REGISTRY = 'Anki15201' // Replace with your Docker Hub username
     DOCKER_CREDENTIALS = credentials('docker-credentials') // Jenkins credential ID for Docker Hub
     KUBE_CONFIG = credentials('kubeconfig') // Jenkins credential ID for Kubernetes config
   }
@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         echo 'Checking out code from GitHub...'
-        git branch: 'microservices-shopping-app', url: 'https://github.com/Anki15201/microservices-demo.git'
+        git branch: 'main', url: 'https://github.com/Anki15201/microservices-shop.git'
       }
     }
     stage('Build Docker Images') {
