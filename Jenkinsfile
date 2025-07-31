@@ -10,6 +10,7 @@ pipeline {
       steps {
         echo 'Checking out code from GitHub...'
         git branch: 'main', url: 'https://github.com/Anki15201/microservices-shop.git'
+        echo "cloning is success"
       }
     }
     stage('Build Docker Images') {
@@ -20,6 +21,7 @@ pipeline {
             dir(service) {
               echo "Building Docker image for ${service}..."
               sh "docker build -t ${DOCKER_REGISTRY}/microservices:${service} ."
+              echo "${service} image building success"
             }
           }
         }
@@ -33,6 +35,7 @@ pipeline {
             for (service in services) {
               echo "Pushing Docker image for ${service}..."
               sh "docker push ${DOCKER_REGISTRY}/microservices:${service}"
+              echo "${service} image pushing success"
             }
           }
         }
